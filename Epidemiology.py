@@ -31,7 +31,7 @@ def dayNum(dailySpread):
 def mainLoop():
     inputs = getInput()
     dailySpread = calcSpread(inputs)
-    print(f'Day {dayNum(dailySpread)} will be the first day the virus spreads to more than the population given')
+    print(f'Day {dayNum(dailySpread)} will be the first day the number of people infected exceeds the population given')
 
 
 # Replay Prompt

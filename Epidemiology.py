@@ -15,16 +15,15 @@ def getInput():
 def calcSpread(inputs):
     p, n, r = inputs
     dailySpread = []
-    while max(dailySpread, default=0) < p:
-        infected = n * r
-        dailySpread.append(infected)
-        n = infected
+    while sum(dailySpread) <= p:
+        dailySpread.append(n)
+        n *= r
     return dailySpread
 
 
 # Return Which Day The Infection Will Be Higher Than Target Population
 def dayNum(dailySpread):
-    day = len(dailySpread)
+    day = len(dailySpread) - 1
     return day
 
 
@@ -32,7 +31,7 @@ def dayNum(dailySpread):
 def mainLoop():
     inputs = getInput()
     dailySpread = calcSpread(inputs)
-    dayNum(dailySpread)
+    print(dayNum(dailySpread))
 
 
 # Replay Prompt

@@ -12,7 +12,7 @@ def getInput():
 
 
 # Calculate Spread of Infection
-def calcSpread():
+def calcSpread(inputs):
     p, n, r = inputs
     dailySpread = []
     while max(dailySpread) < p:
@@ -22,19 +22,30 @@ def calcSpread():
     return dailySpread
 
 
-
 # Return Which Day The Infection Will Be Higher Than Target Population
-def dayNum():
-    pass
-
+def dayNum(dailySpread):
+    day = len(dailySpread)
+    return day
 
 
 # Main Loop
 def mainLoop():
-    pass
-
-
+    inputs = getInput()
+    dailySpread = calcSpread(inputs)
+    dayNum(dailySpread)
 
 
 # Replay Prompt
-
+if __name__ == '__main__':
+    while True:
+        mainLoop()
+        while True:
+            answer = input('Calculate Again? (Y/N): ')
+            if answer.upper() in ('Y', 'N'):
+                break
+            print('\nInvalid input\n')
+        if answer.upper() == 'Y':
+            continue
+        else:
+            print('\nGoodbye')
+            break

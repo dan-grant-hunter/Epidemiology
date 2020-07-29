@@ -9,3 +9,26 @@ def getInput():
     for n in range(3):
         inputs.append(int(input()))
     return inputs
+
+
+# Calculate Spread of Infection
+def calcSpread():
+    pass
+
+
+
+# Return Which Day The Infection Will Be Higher Than Target Population
+def dayNum():
+    pass
+
+
+
+# Main Loop
+def mainLoop():
+    pass
+
+
+
+
+# Replay Prompt
+

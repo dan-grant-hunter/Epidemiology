@@ -15,7 +15,7 @@ def getInput():
 def calcSpread(inputs):
     p, n, r = inputs
     dailySpread = []
-    while max(dailySpread) < p:
+    while max(dailySpread, default=0) < p:
         infected = n * r
         dailySpread.append(infected)
         n = infected
@@ -47,5 +47,4 @@ if __name__ == '__main__':
         if answer.upper() == 'Y':
             continue
         else:
-            print('\nGoodbye')
             break

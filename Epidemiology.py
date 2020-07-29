@@ -2,7 +2,7 @@
 # Epidemiology
 # -----------------------------------------------------------------------------
 
-# Get Input Population (P), Number of People Infected on Day 0 (N) and Infection Rate (R)
+# Get Input Population (p), Number of People Infected on Day 0 (n) and Infection Rate (r)
 def getInput():
     inputs = []
     print("Enter the population, initial infections, and infection rate:")
@@ -13,7 +13,13 @@ def getInput():
 
 # Calculate Spread of Infection
 def calcSpread():
-    pass
+    p, n, r = inputs
+    dailySpread = []
+    while max(dailySpread) < p:
+        infected = n * r
+        dailySpread.append(infected)
+        n = infected
+    return dailySpread
 
 
 
